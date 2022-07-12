@@ -5,18 +5,10 @@ import 'package:happy_movies/route/app_route.gr.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
-  // await dotenv.load(fileName: ".env");
   WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
+
   SharedPreferences.getInstance();
-  // await SystemChrome.setPreferredOrientations(
-  //   [
-  //     DeviceOrientation.portraitUp,
-  //     DeviceOrientation.landscapeLeft,
-  //     DeviceOrientation.landscapeRight,
-  //     DeviceOrientation.portraitDown,
-  //   ],
-  // );
+
   runApp(const MyApp());
 }
 
