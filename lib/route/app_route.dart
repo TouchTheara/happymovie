@@ -1,16 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 
-import '../../page/favorite_page/favorite_page.dart';
-import '../../page/movies_page/movie_rank_page.dart';
-import '../../page/profile/profile.dart';
-import '../../page/splash_screen/splash_screen.dart';
-import '../../page/tv_show.dart/tv_show_page.dart';
-import '../../page/video/video_detail_page.dart';
-import '../page/bottom_navigation_bar.dart/bottom_navigation_bar.dart';
-import '../page/home_screen/home_screen.dart';
-import '../page/login/login_page.dart';
-import '../page/movies_page/movies_page.dart';
-import '../page/video_play/video_player.dart';
+import '../module/bottom_navigation_bar.dart/bottom_navigation_bar.dart';
+import '../module/favorite_page/favorite_page.dart';
+import '../module/home_screen/home_screen.dart';
+import '../module/login/login_page.dart';
+import '../module/movies_page/movie_rank_page.dart';
+import '../module/movies_page/movies_page.dart';
+import '../module/profile/profile.dart';
+import '../module/splash_screen/splash_screen.dart';
+
+import '../module/tv_show/tv_show_page.dart';
+
+import '../module/video_play/video_player.dart';
+import '../module/video_play_list/video_detail_page.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',

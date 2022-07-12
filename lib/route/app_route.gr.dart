@@ -13,20 +13,18 @@
 import 'package:auto_route/auto_route.dart' as _i5;
 import 'package:flutter/material.dart' as _i13;
 
-import '../../page/bottom_navigation_bar.dart/bottom_navigation_bar.dart'
-    as _i2;
-import '../../page/favorite_page/favorite_page.dart' as _i7;
-import '../../page/home_screen/home_screen.dart' as _i9;
-import '../../page/home_screen/model/popular_movie_model/popular_movies_model/movies_model.dart'
-    as _i14;
-import '../../page/login/login_page.dart' as _i3;
-import '../../page/movies_page/movie_rank_page.dart' as _i12;
-import '../../page/movies_page/movies_page.dart' as _i11;
-import '../../page/profile/profile.dart' as _i8;
-import '../../page/splash_screen/splash_screen.dart' as _i1;
-import '../../page/tv_show.dart/tv_show_page.dart' as _i6;
-import '../../page/video/video_detail_page.dart' as _i10;
-import '../../page/video_play/video_player.dart' as _i4;
+import '../module/bottom_navigation_bar.dart/bottom_navigation_bar.dart' as _i2;
+import '../module/favorite_page/favorite_page.dart' as _i7;
+import '../module/home_screen/home_screen.dart' as _i9;
+import '../module/home_screen/model/movie_model/movie_model.dart' as _i14;
+import '../module/login/login_page.dart' as _i3;
+import '../module/movies_page/movie_rank_page.dart' as _i12;
+import '../module/movies_page/movies_page.dart' as _i11;
+import '../module/profile/profile.dart' as _i8;
+import '../module/splash_screen/splash_screen.dart' as _i1;
+import '../module/tv_show/tv_show_page.dart' as _i6;
+import '../module/video_play/video_player.dart' as _i4;
+import '../module/video_play_list/video_detail_page.dart' as _i10;
 
 class AppRouter extends _i5.RootStackRouter {
   AppRouter([_i13.GlobalKey<_i13.NavigatorState>? navigatorKey])
@@ -175,7 +173,7 @@ class LoginRoute extends _i5.PageRouteInfo<void> {
 /// generated route for
 /// [_i4.VideoPlayer]
 class VideoPlayerRouter extends _i5.PageRouteInfo<VideoPlayerRouterArgs> {
-  VideoPlayerRouter({_i13.Key? key, _i14.MoviesModel? moviesModel})
+  VideoPlayerRouter({_i13.Key? key, _i14.MovieModel? moviesModel})
       : super(VideoPlayerRouter.name,
             path: 'video-player',
             args: VideoPlayerRouterArgs(key: key, moviesModel: moviesModel));
@@ -188,7 +186,7 @@ class VideoPlayerRouterArgs {
 
   final _i13.Key? key;
 
-  final _i14.MoviesModel? moviesModel;
+  final _i14.MovieModel? moviesModel;
 
   @override
   String toString() {
@@ -274,7 +272,7 @@ class HomeScreenArgs {
 /// generated route for
 /// [_i10.VideoDetail]
 class VideoDetailRoute extends _i5.PageRouteInfo<VideoDetailRouteArgs> {
-  VideoDetailRoute({_i13.Key? key, _i14.MoviesModel? moviesModel})
+  VideoDetailRoute({_i13.Key? key, _i14.MovieModel? moviesModel})
       : super(VideoDetailRoute.name,
             path: 'detail',
             args: VideoDetailRouteArgs(key: key, moviesModel: moviesModel));
@@ -287,7 +285,7 @@ class VideoDetailRouteArgs {
 
   final _i13.Key? key;
 
-  final _i14.MoviesModel? moviesModel;
+  final _i14.MovieModel? moviesModel;
 
   @override
   String toString() {
