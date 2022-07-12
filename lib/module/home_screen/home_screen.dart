@@ -261,7 +261,19 @@ class HomeScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 30, bottom: 0, left: 20, right: 0),
-                    child: SizedBox(height: 280, child: Container()
+                    child: SizedBox(
+                        height: 280,
+                        child: ListView.builder(
+                            itemCount: homeController.popularList.length,
+                            itemBuilder: ((context, index) {
+                              return CustomMovieCard(
+                                imgUrl:
+                                    homeController.popularList[index].imageUrl,
+                                title: homeController
+                                    .popularList[index].movieTitle,
+                                rate: homeController.popularList[index].rate,
+                              );
+                            }))
                         // StreamBuilder<List<MoviesModel>>(
                         //     stream: homeController.readMovie(),
                         //     builder: (context, snapshot) {
@@ -449,6 +461,7 @@ class CustomMovieCard extends StatelessWidget {
   final String? title;
   final double? rate;
   final bool? hideFav;
+
   @override
   Widget build(BuildContext context) {
     return Padding(

@@ -17,23 +17,27 @@ class HomeScreenController extends GetxController {
   ];
 
   var popularList = <MovieModel>[];
+  final isLoading = false.obs;
   final ApiBaseHelper _apiBaseHelper = ApiBaseHelper();
-  fetchPopularMovie() async {
+  Future<List<MovieModel>> fetchPopularMovie() async {
+    isLoading(false);
     await _apiBaseHelper
         .onNetworkRequesting(
-            url: 'popular-movies/',
+            url: '/popular-movies',
             methode: METHODE.post,
             body: {"rate": 7, "start": "2019", "end": "2022"},
             isAuthorize: false)
         .then((value) {
-      popularList.clear();
       value['result'].map((value) {
-        popularList.add(MovieModel.fromJson(value));
+        // popularList.add(MovieModel.fromJson(value));
+        debugPrint("=========>>>>>${value['result']}");
       }).toList();
-      for (var element in popularList) {
-        debugPrint('$element');
-      }
+      isLoading(false);
+    }).then((ErrorModel? errorModel) {
+      isLoading(false);
+      debugPrint(errorModel.toString());
     });
+    return popularList;
   }
 
   // var popularMovieLists = <MoviesModel>[];

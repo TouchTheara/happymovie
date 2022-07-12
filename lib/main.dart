@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
+import 'package:happy_movies/module/home_screen/controller/home_screen_controller.dart';
 import 'package:happy_movies/route/app_route.gr.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  await dotenv.load(fileName: ".env");
   SharedPreferences.getInstance();
-
   runApp(const MyApp());
 }
 
@@ -34,8 +35,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final homeCon = Get.put(HomeScreenController());
   @override
   void initState() {
+    homeCon.fetchPopularMovie();
     super.initState();
   }
 
