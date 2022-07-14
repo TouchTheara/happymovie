@@ -6,6 +6,8 @@ import 'package:happy_movies/route/app_route.gr.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
+// Test
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
